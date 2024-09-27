@@ -9,21 +9,39 @@ public class Workshop {
     public int sumarDosNumeros(int a, int b) {
         // TODO: Implementar el método para retornar la suma de dos números enteros.
         // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
-        return 0;
+        return a + b;
     }
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
         // TODO: Implementar el método para retornar el mayor de los tres números enteros.
         // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
-        return 0;
+        if(a > b){
+            if(a > c) {
+                return a;
+            }
+            else {
+                return c;
+            }
+        }
+        else {
+            if(b>a) {
+                return b;
+            }
+            else {
+                return c;
+            }
+        }
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
         // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
-        return new int[0];
+        for(int i= 1; i<=limite; ++i){
+            System.out.println(numero * i);
+        }
+        return new int[];
     }
 
     // Método que calcula el factorial de un número entero
@@ -31,14 +49,33 @@ public class Workshop {
         // TODO: Implementar el método para calcular el factorial de un número entero.
         // Ejemplo: Si n = 5, el resultado debería ser 120.
         // Lanzar IllegalArgumentException si n es negativo.
-        return 0;
+        int i,f = 1;
+        for(i = 1; i<= n; ++i ){
+            f = f * i;
+        }
+        return f;
     }
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
         // TODO: Implementar el método para verificar si un número es primo.
         // Ejemplo: Si numero = 7, el resultado debería ser true.
-        return false;
+        if (numero<=1) {
+            return false;
+        }
+        else if (numero == 2) {
+            return true;
+        }
+        else {
+            for (int i = 2; i < numero; ++i){
+                if(numero % i == 0)
+                    return false;
+
+                else {
+                    return true;
+                }
+            }
+        }
     }
 
     // Método que genera una serie de Fibonacci
@@ -46,14 +83,25 @@ public class Workshop {
         // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
         // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
         // Lanzar IllegalArgumentException si n es negativo.
+        int a = 0, b = 1, c;
+        for (int i = 0; i<n; ++i){
+            System.out.println(a);
+            c = a + b;
+            a = b;
+        }
         return new int[0];
     }
+
 
     // Método que suma todos los elementos de un arreglo
     public int sumaElementos(int[] arreglo) {
         // TODO: Implementar el método para sumar todos los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 15.
-        return 0;
+        int suma = 0;
+        for(int i : arreglo ){
+            suma = suma + i;
+        }
+        return suma;
     }
 
     // Método que calcula el promedio de los elementos de un arreglo
@@ -243,7 +291,8 @@ Rock crushes Scissors
     }
 
     public double areaCirculo(double radio) {
-        return 0.0;
+
+            return Math.PI * Math.pow(radio, 2) ;
     }
 
     public String zoodiac(int day, int month) {
