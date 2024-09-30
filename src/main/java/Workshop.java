@@ -16,32 +16,38 @@ public class Workshop {
     public int mayorDeTresNumeros(int a, int b, int c) {
         // TODO: Implementar el método para retornar el mayor de los tres números enteros.
         // Ejemplo: Si a = 3, b = 7, y c = 5, el resultado debería ser 7.
+        int m = 0;
         if(a > b){
             if(a > c) {
-                return a;
+                m = a;
             }
             else {
-                return c;
+                m = c;
             }
         }
         else {
             if(b>a) {
-                return b;
+                if (b>c){
+                    m = b;
+                }
+                else {
+                    m = c;
+                }
             }
-            else {
-                return c;
-            }
+
         }
+        return m;
     }
 
     // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
         // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
+        int []x = new int[limite];
         for(int i= 1; i<=limite; ++i){
-            System.out.println(numero * i);
+            x[i]= numero * i;
         }
-        return new int[];
+        return x;
     }
 
     // Método que calcula el factorial de un número entero
@@ -68,14 +74,15 @@ public class Workshop {
         }
         else {
             for (int i = 2; i < numero; ++i){
-                if(numero % i == 0)
+                if(numero % i == 0){
                     return false;
-
+                    }
                 else {
                     return true;
                 }
             }
         }
+        return false;
     }
 
     // Método que genera una serie de Fibonacci
@@ -83,13 +90,15 @@ public class Workshop {
         // TODO: Implementar el método para generar la serie de Fibonacci hasta el número n.
         // Ejemplo: Si n = 5, el resultado debería ser [0, 1, 1, 2, 3].
         // Lanzar IllegalArgumentException si n es negativo.
+        int[]x = new int[n];
         int a = 0, b = 1, c;
         for (int i = 0; i<n; ++i){
-            System.out.println(a);
+            x[i]= a;
             c = a + b;
             a = b;
+            b = c;
         }
-        return new int[0];
+        return x;
     }
 
 
@@ -296,9 +305,106 @@ Rock crushes Scissors
     }
 
     public String zoodiac(int day, int month) {
+        if (day > 31) {
+            System.out.println("dia invalido");
+        }
+        if (month > 31) {
+            System.out.println("mes invalido");
+        }
+        if (day < 1) {
+            System.out.println("dia invalido");
+        }
+        if (month < 1) {
+            System.out.println("mes invalido");
+        }
+        else {
+
+            if (month == 1) {
+                if (day <= 20) {
+                    return "capricornio";
+                } else {
+                    System.out.println("acuario");
+                }
+            }
+            if (month== 2) {
+                if (day<= 19) {
+                    System.out.println("acuario");
+                } else {
+                    System.out.println("piscis");
+                }
+            }
+            if (month == 3) {
+                if (day <= 20) {
+                    System.out.println("piscis");
+                } else {
+                    System.out.println("aries");
+                }
+            }
+            if (month == 4) {
+                if (day <= 20) {
+                    System.out.println("aries");
+                } else {
+                    System.out.println("tauro");
+                }
+            }
+            if (month == 5) {
+                if (day <= 20) {
+                    System.out.println("tauro");
+                } else {
+                    System.out.println("geminis");
+                }
+            }
+            if (month == 6) {
+                if (day <= 20) {
+                    System.out.println("geminis");
+                } else {
+                    System.out.println("cancer");
+                }
+            }
+            if (month == 7) {
+                if (day <= 22) {
+                    System.out.println("cancer");
+                } else {
+                    System.out.println("leo");
+                }
+            }
+            if (month == 8) {
+                if (day <= 23) {
+                    System.out.println("leo");
+                } else {
+                    System.out.println("virgo");
+                }
+            }
+            if (month == 9) {
+                if (day <= 22) {
+                    System.out.println("virgo");
+                } else {
+                    System.out.println("libra");
+                }
+            }
+            if (month == 10) {
+                if (day <= 23) {
+                    System.out.println("libra");
+                } else {
+                    System.out.println("escorpio");
+                }
+            }
+            if (month == 11) {
+                if (day <= 22) {
+                    System.out.println("escorpio");
+                } else {
+                    System.out.println("sagitario");
+                }
+            }
+            if (month == 12) {
+                if (day <= 21) {
+                    System.out.println("sagitario");
+                } else {
+                    System.out.println("capricornio");
+                }
+            }
+        }
         return "";
     }
-
-
 }
 
