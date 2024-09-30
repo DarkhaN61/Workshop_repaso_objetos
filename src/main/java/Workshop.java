@@ -44,7 +44,7 @@ public class Workshop {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
         // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
         int []x = new int[limite];
-        for(int i= 1; i<=limite; ++i){
+        for(int i= 1; i<limite; ++i){
             x[i]= numero * i;
         }
         return x;
@@ -305,6 +305,7 @@ Rock crushes Scissors
     }
 
     public String zoodiac(int day, int month) {
+        int m = 0;
         if (day > 31) {
             System.out.println("dia invalido");
         }
