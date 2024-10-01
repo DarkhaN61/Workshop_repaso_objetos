@@ -43,11 +43,12 @@ public class Workshop {
     public int[] tablaMultiplicar(int numero, int limite) {
         // TODO: Implementar el método para retornar la tabla de multiplicar del número dado.
         // Ejemplo: Si numero = 2 y limite = 5, el resultado debería ser [2, 4, 6, 8, 10].
-        int []x = new int[limite];
-        for(int i= 1; i<limite; ++i){
-            x[i]= numero * i;
-        }
-        return x;
+       int[]z = new int[limite];
+       int j = 1;
+       for(int i= 0; i < z.length; i++ ){
+           z[i] = numero * j++;
+       }
+        return z;
     }
 
     // Método que calcula el factorial de un número entero
@@ -66,23 +67,24 @@ public class Workshop {
     public boolean esPrimo(int numero) {
         // TODO: Implementar el método para verificar si un número es primo.
         // Ejemplo: Si numero = 7, el resultado debería ser true.
+        boolean m = true;
         if (numero<=1) {
-            return false;
+            m = false;
         }
         else if (numero == 2) {
-            return true;
+            m = true;
         }
         else {
             for (int i = 2; i < numero; ++i){
                 if(numero % i == 0){
-                    return false;
+                    m = false;
                     }
                 else {
-                    return true;
+                    m = true;
                 }
             }
         }
-        return false;
+        return m;
     }
 
     // Método que genera una serie de Fibonacci
@@ -208,6 +210,7 @@ public class Workshop {
     public String convertirAMayusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a mayúsculas.
         // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
+        String m = "";
         return "";
     }
 
@@ -300,112 +303,115 @@ Rock crushes Scissors
     }
 
     public double areaCirculo(double radio) {
-
             return Math.PI * Math.pow(radio, 2) ;
     }
-
     public String zoodiac(int day, int month) {
-        int m = 0;
+        String m = "";
         if (day > 31) {
-            System.out.println("dia invalido");
+            m = "Invalid Date";
         }
         if (month > 31) {
-            System.out.println("mes invalido");
+           m ="Invalid Date";
         }
         if (day < 1) {
-            System.out.println("dia invalido");
+            m = "Invalid Date";
         }
         if (month < 1) {
-            System.out.println("mes invalido");
+            m= "Invalid Date";
         }
         else {
-
             if (month == 1) {
                 if (day <= 20) {
                     return "capricornio";
                 } else {
-                    System.out.println("acuario");
+                   m ="acuario";
                 }
             }
             if (month== 2) {
-                if (day<= 19) {
-                    System.out.println("acuario");
-                } else {
-                    System.out.println("piscis");
+                if(day <= 29 ) {
+                    if (day<= 19) {
+                        m= "acuario";
+                    }
+                    else {
+                        m = "Pisces";
+                    }
+                }
+                else {
+                    m = "Invalid Date";
                 }
             }
             if (month == 3) {
                 if (day <= 20) {
-                    System.out.println("piscis");
+                    m ="Pisces";
                 } else {
-                    System.out.println("aries");
+                    m = "Aries";
                 }
             }
             if (month == 4) {
                 if (day <= 20) {
-                    System.out.println("aries");
+                    m = "Aries";
                 } else {
-                    System.out.println("tauro");
+                    m = "tauro";
                 }
             }
             if (month == 5) {
                 if (day <= 20) {
-                    System.out.println("tauro");
+                   m = "tauro";
                 } else {
-                    System.out.println("geminis");
+                   m = "Gemini";
                 }
             }
             if (month == 6) {
                 if (day <= 20) {
-                    System.out.println("geminis");
+                   m = "Gemini";
                 } else {
-                    System.out.println("cancer");
+                    m = "Cancer";
                 }
             }
             if (month == 7) {
                 if (day <= 22) {
-                    System.out.println("cancer");
+                    m = "Cancer";
                 } else {
-                    System.out.println("leo");
+                    m = "Leo";
                 }
             }
             if (month == 8) {
                 if (day <= 23) {
-                    System.out.println("leo");
+                   m = "Leo";
                 } else {
-                    System.out.println("virgo");
+                    m ="virgo";
                 }
             }
             if (month == 9) {
                 if (day <= 22) {
-                    System.out.println("virgo");
+                    m = "virgo";
                 } else {
-                    System.out.println("libra");
+                    m = "libra";
                 }
             }
             if (month == 10) {
                 if (day <= 23) {
-                    System.out.println("libra");
+                   m = "libra";
                 } else {
-                    System.out.println("escorpio");
+                    m = "escorpio";
                 }
             }
             if (month == 11) {
                 if (day <= 22) {
-                    System.out.println("escorpio");
+                    m ="escorpio";
                 } else {
-                    System.out.println("sagitario");
+                    m= "sagitario";
                 }
             }
             if (month == 12) {
                 if (day <= 21) {
-                    System.out.println("sagitario");
+                    m = "sagitario";
                 } else {
-                    System.out.println("capricornio");
+                   m = "capricornio";
                 }
             }
         }
-        return "";
+        return m ;
     }
 }
 
