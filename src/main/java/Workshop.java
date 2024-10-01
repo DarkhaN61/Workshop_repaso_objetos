@@ -210,15 +210,14 @@ public class Workshop {
     public String convertirAMayusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a mayúsculas.
         // Ejemplo: Si cadena = "hello", el resultado debería ser "HELLO".
-        String m = "";
-        return "";
+        return cadena.toUpperCase();
     }
 
     // Método que convierte una cadena a minúsculas
     public String convertirAMinusculas(String cadena) {
         // TODO: Implementar el método para convertir una cadena a minúsculas.
         // Ejemplo: Si cadena = "HELLO", el resultado debería ser "hello".
-        return "";
+        return cadena.toLowerCase();
     }
 
     // Método que reemplaza una subcadena en una cadena por otra subcadena
@@ -254,7 +253,20 @@ public class Workshop {
     public String convertirABinario(int numero) {
         // TODO: Implementar el método para convertir un número en su representación binaria.
         // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+        String m = "";
+        int modulo;
+        if (numero == 0){
+            m = String.valueOf(0);
+        }
+        else {
+            while (numero != 0) {
+                modulo = numero % 2;
+                m = m + modulo;
+                numero = numero / 2;
+            }
+            m = new StringBuilder(m).reverse().toString();
+        }
+        return m;
     }
 
     // Método que convierte un número en su representación hexadecimal
