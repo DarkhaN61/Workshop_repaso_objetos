@@ -119,21 +119,42 @@ public class Workshop {
     public double promedioElementos(int[] arreglo) {
         // TODO: Implementar el método para calcular el promedio de los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
-        return 0.0;
+        int[]x = arreglo;
+        int a = 0;
+         double promedio = 0;
+         for (int i = 0; i< x.length; i++){
+             a= a + x[i];
+         }
+        promedio = a /x.length;
+        return promedio ;
     }
 
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
+        int[]x = arreglo;
+        int mayor = 0;
+        for (int i = 0; i<x.length; i++){
+         if (x[i]>mayor){
+             mayor = x[i];
+         }
+        }
+        return mayor;
     }
 
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
+        int[]x = arreglo;
+        int menor = 0;
+        for (int i = 0; i<x.length; i++){
+            if (x[i]< menor){
+                menor = x[i];
+            }
+        }
+        return menor;
     }
 
     // Método que busca un elemento en un arreglo
@@ -189,7 +210,8 @@ public class Workshop {
     public String invertirCadena(String cadena) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
-        return "";
+        cadena = new StringBuilder(cadena).reverse().toString();
+        return cadena;
     }
 
     // Método que verifica si una cadena es un palíndromo
@@ -259,12 +281,24 @@ public class Workshop {
             m = String.valueOf(0);
         }
         else {
+            if (numero<0){
+            numero = Math.abs(numero);
             while (numero != 0) {
                 modulo = numero % 2;
                 m = m + modulo;
                 numero = numero / 2;
             }
             m = new StringBuilder(m).reverse().toString();
+            m = "-"+ m;
+            }
+            else{
+                while (numero != 0) {
+                    modulo = numero % 2;
+                    m = m + modulo;
+                    numero = numero / 2;
+                }
+                m = new StringBuilder(m).reverse().toString();
+            }
         }
         return m;
     }
@@ -273,7 +307,33 @@ public class Workshop {
     public String convertirAHexadecimal(int numero) {
         // TODO: Implementar el método para convertir un número en su representación hexadecimal.
         // Ejemplo: Si numero = 255, el resultado debería ser "FF".
-        return "";
+        String m = "", c="0123456789ABCDEF";
+        int modulo;
+        if (numero == 0){
+            m = String.valueOf(0);
+        }
+        else {
+            if (numero<0){
+                numero = Math.abs(numero);
+                while (numero != 0) {
+                    modulo = numero % 16;
+                    m = c.charAt(modulo)+m;
+                    numero = numero / 16;
+                }
+                m = new StringBuilder(m).reverse().toString();
+                m = "-"+ m;
+            }
+            else{
+                while (numero != 0) {
+                    modulo = numero % 16;
+                    m = c.charAt(modulo)+m;
+                    numero = numero / 16;
+                }
+                m = new StringBuilder(m).reverse().toString();
+            }
+        }
+        return m;
+
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
