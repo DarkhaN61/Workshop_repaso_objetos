@@ -72,16 +72,10 @@ public class Workshop {
             m = false;
         }
         else if (numero == 2) {
-            m = true;
         }
         else {
             for (int i = 2; i < numero; ++i){
-                if(numero % i == 0){
-                    m = false;
-                    }
-                else {
-                    m = true;
-                }
+                m = numero % i != 0;
             }
         }
         return m;
@@ -119,13 +113,17 @@ public class Workshop {
     public double promedioElementos(int[] arreglo) {
         // TODO: Implementar el método para calcular el promedio de los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
+        int suma = 0;
         int[]x = arreglo;
+        for (int z : x){
+            suma = suma + z;
+        }
         int a = 0;
-         double promedio = 0;
-         for (int i = 0; i< x.length; i++){
+        double promedio = 0;
+        for (int i = 0; i< x.length; i++){
              a= a + x[i];
          }
-        promedio = a /x.length;
+        promedio = a/suma;
         return promedio ;
     }
 
@@ -148,7 +146,7 @@ public class Workshop {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
         int[]x = arreglo;
-        int menor = 0;
+        int menor = 100;
         for (int i = 0; i<x.length; i++){
             if (x[i]< menor){
                 menor = x[i];
