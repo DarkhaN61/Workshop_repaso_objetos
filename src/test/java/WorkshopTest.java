@@ -117,7 +117,7 @@ public class WorkshopTest {
     }
 
     // Test para el método promedioElementos
-    @Test
+       @Test
     public void testPromedioElementos() {
         // Test 1: Promedio de elementos positivos
         assertEquals(3.0, tester.promedioElementos(new int[]{1, 2, 3, 4, 5}));
